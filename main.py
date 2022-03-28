@@ -8,6 +8,19 @@ Builder.load_file('frontend.kv')
 class RootWidget(ScreenManager):
     pass
 
+class CameraScreen(Screen):
+
+    def start(self):
+        pass
+
+    def stop(self):
+        pass
+
+    def capture(self):
+        pass
+
+class ImageScreen(Screen):
+    pass
 
 class MainApp(App):
 
