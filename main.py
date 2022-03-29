@@ -27,9 +27,15 @@ class CameraScreen(Screen):
         filepath = f'files/{current_time}.png'
         self.ids.camera.export_png(filepath)
         self.manager.current = 'image_screen'
+        self.manager.current_screen.ids.img.source = filepath
 
 class ImageScreen(Screen):
-    pass
+    
+    def create_link(self):
+        filepath = self.ids.img.source
+        filesharer = FileSharer(filepath=filepath)
+        url = filesharer.share()
+        self.ids.link.text = url
 
 class MainApp(App):
 
